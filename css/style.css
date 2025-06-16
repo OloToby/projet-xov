@@ -4,11 +4,11 @@
     --secondary-color: #1E90FF; /* Bleu roi */
     --text-light: #f4f4f4;
     --text-dark: #333;
-    --bg-dark: #121212;
+    --bg-dark: #121212; /* Fond très sombre, quasi noir */
     --bg-medium: #1a1a1a;
-    --accent-color: #00FFFF; /* Cyan */
+    --accent-color: #00FFFF; /* Cyan pour les éclairs/highlights */
     --border-color: rgba(255, 255, 255, 0.1);
-    --hover-glow: 0 0 20px rgba(0,255,255,0.4);
+    --hover-glow: 0 0 20px rgba(0,255,255,0.4); /* Effet de lueur au survol */
 }
 
 /* Reset CSS basique */
@@ -25,22 +25,22 @@ body {
     background: var(--bg-dark);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh; /* S'assure que le body prend toute la hauteur de la vue */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
+    width: 90%; /* Largeur relative pour s'adapter à la taille de l'écran */
+    max-width: 1200px; /* Largeur maximale pour éviter un étirement excessif */
+    margin: auto; /* Centre le conteneur horizontalement */
+    overflow: hidden; /* Cache tout contenu qui dépasse du conteneur */
+    padding: 20px 0; /* Padding vertical pour le contenu */
 }
 
 a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transition douce pour les liens */
 }
 
 a:hover {
@@ -48,20 +48,20 @@ a:hover {
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Supprime les puces des listes */
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
     color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(0,255,255,0.2);
+    text-shadow: 0 0 10px rgba(0,255,255,0.2); /* Ombre légère pour effet néon */
 }
 h2 { font-size: 3.5em; }
 h3 { font-size: 2.5em; }
 h4 { font-size: 1.8em; }
 
-/* Boutons */
+/* Styles des boutons */
 .btn {
     display: inline-block;
     background: var(--primary-color);
@@ -80,7 +80,7 @@ h4 { font-size: 1.8em; }
 
 .btn:hover {
     background: var(--secondary-color);
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Effet léger de soulèvement */
     box-shadow: var(--hover-glow);
 }
 
@@ -95,22 +95,22 @@ h4 { font-size: 1.8em; }
     box-shadow: var(--hover-glow);
 }
 
-/* Header */
+/* Styles de l'en-tête (Header) */
 header {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    backdrop-filter: blur(5px); /* Effet de flou derrière le header */
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
-    position: sticky;
+    position: sticky; /* Reste en haut lors du défilement */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Assure qu'il est au-dessus des autres éléments */
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Espace entre le logo et la navigation */
+    align-items: center; /* Centre verticalement les éléments */
     padding: 0;
 }
 
@@ -125,11 +125,11 @@ header .container {
 }
 
 nav ul {
-    display: flex;
+    display: flex; /* Affiche les éléments de navigation en ligne */
 }
 
 nav ul li {
-    margin-left: 30px;
+    margin-left: 30px; /* Espace entre les éléments de navigation */
 }
 
 nav ul li a {
@@ -139,7 +139,7 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a::after {
+nav ul li a::after { /* Effet souligné au survol */
     content: '';
     position: absolute;
     width: 0;
@@ -154,18 +154,18 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Section Héro - En Développement */
+/* Section Héro (Landing page principale) */
 .hero-section {
-    background: url('../images/hero-background.jpeg') no-repeat center center/cover;
+    background: url('../images/hero-background.jpg') no-repeat center center/cover; /* Image de fond */
     position: relative;
-    height: 90vh;
+    height: 90vh; /* Prend 90% de la hauteur de la vue */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.hero-section::before {
+.hero-section::before { /* Calque sombre sur l'image de fond */
     content: '';
     position: absolute;
     top: 0;
@@ -180,7 +180,7 @@ nav ul li a:hover::after {
     position: relative;
     z-index: 2;
     padding: 50px 20px;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 1.5s ease-out; /* Animation d'apparition */
 }
 
 @keyframes fadeIn {
@@ -188,7 +188,7 @@ nav ul li a:hover::after {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.status-badge {
+.status-badge { /* Badge "En Développement Actif !" */
     background: var(--accent-color);
     color: var(--bg-dark);
     padding: 8px 15px;
@@ -199,7 +199,7 @@ nav ul li a:hover::after {
     margin-bottom: 25px;
     display: inline-block;
     box-shadow: 0 0 15px rgba(0,255,255,0.7);
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite; /* Animation de pulsation */
 }
 
 @keyframes pulse {
@@ -233,7 +233,7 @@ nav ul li a:hover::after {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Sections Générales */
+/* Sections Générales (padding et couleurs de fond) */
 section {
     padding: 80px 0;
     text-align: center;
@@ -263,11 +263,10 @@ section {
     filter: drop-shadow(0 0 10px var(--primary-color));
 }
 
-
-/* Grilles pour Fonctionnalités et Bénéfices */
-.feature-grid { /* Renommé pour éviter le conflit avec les anciennes classes */
+/* Grille des Fonctionnalités */
+.feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* S'adapte à la largeur */
     gap: 40px;
     margin-top: 50px;
 }
@@ -293,7 +292,7 @@ section {
     text-shadow: 0 0 10px rgba(0,191,255,0.4);
 }
 
-/* Section Feuille de Route */
+/* Section Feuille de Route (Timeline) - SIMPLIFIÉE POUR UN MEILLEUR RESPONSIVE */
 .roadmap-timeline {
     position: relative;
     max-width: 900px;
@@ -301,40 +300,30 @@ section {
     padding: 20px 0;
 }
 
-.roadmap-timeline::before {
+.roadmap-timeline::before { /* La ligne verticale */
     content: '';
     position: absolute;
     width: 4px;
     background-color: var(--primary-color);
     top: 0;
     bottom: 0;
-    left: 50%;
-    margin-left: -2px;
+    left: 20px; /* Ligne toujours alignée à gauche */
+    margin-left: 0; /* S'assure qu'il n'y a pas de marge parasite */
     box-shadow: 0 0 10px rgba(0,191,255,0.6);
 }
 
 .timeline-item {
     padding: 10px 0;
     position: relative;
-    width: 50%;
-    left: 50%; /* Initialement centré */
-    transform: translateX(-50%); /* Ajustement pour le centre */
+    width: 100%; /* Les éléments prennent toujours toute la largeur */
+    left: 0; /* Toujours aligné à gauche */
+    transform: translateX(0); /* Supprime toute transformation */
+    padding-left: 80px; /* Espace pour l'icône et la ligne */
+    padding-right: 20px; /* Petit espace à droite du contenu */
+    text-align: left; /* Tout le texte est aligné à gauche */
     margin-bottom: 40px;
     display: flex;
-    align-items: center;
-}
-/* Décalage pour alterner gauche/droite */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    transform: translateX(0);
-    text-align: right;
-    padding-right: 60px;
-}
-.timeline-item:nth-child(even) {
-    left: 50%;
-    transform: translateX(0);
-    text-align: left;
-    padding-left: 60px;
+    align-items: center; /* Centre le contenu verticalement avec l'icône */
 }
 
 .timeline-icon {
@@ -351,12 +340,8 @@ section {
     color: var(--text-light);
     font-size: 1.8em;
     box-shadow: 0 0 15px rgba(0,191,255,0.8);
-}
-.timeline-item:nth-child(odd) .timeline-icon {
-    right: -30px; /* Positionnement à droite pour les éléments impairs */
-}
-.timeline-item:nth-child(even) .timeline-icon {
-    left: -30px; /* Positionnement à gauche pour les éléments pairs */
+    left: 20px; /* Positionne l'icône sur la ligne */
+    margin-left: -30px; /* Ajuste pour que le centre de l'icône soit sur la ligne */
 }
 
 .timeline-content {
@@ -365,7 +350,7 @@ section {
     border-radius: 10px;
     border: 1px solid var(--border-color);
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    width: 100%; /* Prend toute la largeur disponible */
+    width: 100%; /* Prend toute la largeur disponible après le padding */
 }
 
 .timeline-content h4 {
@@ -388,30 +373,41 @@ section {
 }
 .join-us-section form {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Champs en colonne par défaut */
+    align-items: center; /* Centre les champs */
     gap: 15px;
-    flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.join-us-section input[type="email"] {
-    padding: 15px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
+.join-us-section input[type="email"],
+.join-us-section textarea { /* Style commun pour input et textarea */
     width: 100%;
-    max-width: 380px;
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--text-dark);
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 450px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--text-light);
+    font-size: 1em;
     outline: none;
     transition: all 0.3s ease;
 }
-.join-us-section input[type="email"]:focus {
-    box-shadow: 0 0 0 3px var(--primary-color), inset 0 2px 5px rgba(0,0,0,0.2);
+
+.join-us-section input[type="email"]:focus,
+.join-us-section textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,191,255,0.5);
 }
-.join-us-section input[type="email"]::placeholder {
-    color: #777;
+
+.join-us-section textarea {
+    resize: vertical;
+    min-height: 100px;
 }
+/* Le bouton s'ajuste à son contenu par défaut */
+.join-us-section .btn {
+    width: auto;
+    max-width: 100%;
+}
+
 .social-prompt {
     margin-top: 25px;
     font-size: 1em;
@@ -441,44 +437,23 @@ footer i {
     margin: 0 5px;
 }
 
-/* Responsive Design */
+/* Responsive Design (Media Queries) */
+
+/* Pour les tablettes et grands mobiles (jusqu'à 992px de largeur) */
 @media (max-width: 992px) {
     h2 { font-size: 2.8em; }
     h3 { font-size: 2.2em; }
     .hero-section { height: 70vh; }
     nav ul li { margin-left: 15px; }
 
-    .roadmap-timeline::before {
-        left: 20px; /* Déplace la ligne à gauche */
-    }
-    .timeline-item {
-        width: 100%;
-        left: 0;
-        transform: translateX(0);
-        padding-left: 60px; /* Tous les éléments à gauche */
-        text-align: left;
-    }
-    .timeline-item:nth-child(odd) { /* Réinitialise les décalages impairs */
-        padding-right: 0;
-        text-align: left;
-    }
-    .timeline-item:nth-child(even) { /* Maintient les décalages pairs */
-        padding-left: 60px;
-    }
-    .timeline-item:nth-child(odd) .timeline-icon { /* Positionne les icônes à gauche */
-        right: auto;
-        left: -30px;
-    }
-    .timeline-icon {
-        left: 20px; /* Aligne les icônes sur la ligne */
-        margin-left: 0;
-    }
+    /* Aucun ajustement majeur pour la timeline ici, car elle est déjà en mode colonne */
 }
 
+/* Pour les mobiles (jusqu'à 768px de largeur) */
 @media (max-width: 768px) {
     .logo { font-size: 2em; }
-    nav { display: none; }
-    header .container { justify-content: center; }
+    nav { display: none; } /* Cache la navigation principale pour économiser de l'espace */
+    header .container { justify-content: center; } /* Centre le logo quand la navigation est cachée */
 
     .hero-section h2 {
         font-size: 2.2em;
@@ -487,15 +462,20 @@ footer i {
         font-size: 1em;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    .feature-grid {
+        grid-template-columns: 1fr; /* Force la grille des fonctionnalités à une seule colonne */
     }
     .feature-item {
         margin-bottom: 20px;
     }
     section { padding: 40px 0; }
+    
+    /* Légers ajustements pour la timeline sur cette taille */
+    .timeline-item { padding-left: 70px; } /* Ajuste le padding si besoin */
+    .timeline-icon { left: 20px; width: 50px; height: 50px; font-size: 1.6em; margin-left: -25px; }
 }
 
+/* Pour les très petits mobiles (jusqu'à 480px de largeur) */
 @media (max-width: 480px) {
     .logo { font-size: 1.8em; }
     .hero-section h2 { font-size: 1.8em; }
@@ -508,9 +488,10 @@ footer i {
     .feature-item i { font-size: 2.5em; }
     .feature-item h4 { font-size: 1.3em; }
 
-    .roadmap-timeline::before { left: 15px; }
-    .timeline-item { padding-left: 40px; }
-    .timeline-icon { left: 15px; width: 45px; height: 45px; font-size: 1.5em; }
+    /* Ajustements pour la timeline sur les plus petits écrans */
+    .roadmap-timeline::before { left: 15px; } /* Ligne encore plus à gauche */
+    .timeline-item { padding-left: 45px; } /* Ajuste le padding pour l'icône plus petite */
+    .timeline-icon { left: 15px; width: 40px; height: 40px; font-size: 1.3em; margin-left: -20px; }
     .timeline-content { padding: 15px; }
     .timeline-content h4 { font-size: 1.2em; }
     .timeline-content p { font-size: 0.85em; }
@@ -521,6 +502,7 @@ footer i {
         gap: 10px;
     }
     .join-us-section input[type="email"],
+    .join-us-section textarea,
     .join-us-section .btn {
         width: 90%;
         max-width: none;
